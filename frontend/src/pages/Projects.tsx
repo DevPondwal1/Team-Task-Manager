@@ -38,7 +38,7 @@ export default function Projects() {
     e.preventDefault();
     try {
       if (editingProject) {
-        await api.patch(`/projects/${editingProject.id}`, { name: newProjectName, description: newProjectDesc });
+        await api.put(`/projects/${editingProject.id}`, { name: newProjectName, description: newProjectDesc });
       } else {
         await api.post('/projects', { name: newProjectName, description: newProjectDesc });
       }

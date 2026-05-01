@@ -55,7 +55,7 @@ export default function ProjectBoard() {
     e.preventDefault();
     try {
       if (editingTask) {
-        await api.patch(`/projects/${projectId}/tasks/${editingTask.id}`, {
+        await api.put(`/projects/${projectId}/tasks/${editingTask.id}`, {
           title: newTaskTitle,
           description: newTaskDesc,
           priority: newTaskPriority
