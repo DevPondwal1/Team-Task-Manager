@@ -12,7 +12,8 @@ export const errorHandler = (err: any, req: Request, res: Response, next: NextFu
   }
 
   if (err.name === 'ZodError') {
-    const errors = err.errors.map((e: any) => ({ field: e.path.join('.'), message: e.message }));
+    const issues = err.issues || err.errors || [];
+    const errors = issues.map((e: any) => ({ field: e.path?.join('.') || 'unknown', message: e.message }));
     return errorResponse(res, 'Validation failed', 422, errors);
   }
 
