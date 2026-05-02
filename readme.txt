@@ -2,7 +2,7 @@ TEAM TASK MANAGER - FULL-STACK ASSIGNMENT SUBMISSION
 ====================================================
 
 Repository URL: https://github.com/jatin-jatin42/Team-Task-Manager
-Live Deployment: https://team-task-manager-production-7f02.up.railway.app/
+Live Deployment: frontend-production-79e3.up.railway.app
 
 1. OVERVIEW
 ----------------------------------------------------
