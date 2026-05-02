@@ -165,15 +165,17 @@ This application is designed to be easily deployed on [Railway](https://railway.
 
 1. **Push to GitHub**: Push this complete monorepo to a single GitHub repository.
 2. **Provision Database**: In Railway, create a new project and add a `PostgreSQL` plugin.
-3. **Deploy Backend**: 
+3. **Deploy Backend:**
    - Deploy from your GitHub repo, setting the Root Directory to `/backend`.
-   - Set Build Command: `npm run build`
-   - Set Start Command: `npx prisma migrate deploy && npm start`
-   - Add environment variables: `DATABASE_URL` (from Postgres plugin), `JWT_SECRET`, `JWT_REFRESH_SECRET`, `PORT=5000`.
-4. **Deploy Frontend**:
+   - Set Build Command: `npm install && npm run build`
+   - Set Start Command: `npx prisma db push && npm start`
+   - Add environment variables: `MY_DB_URL` (from Postgres plugin), `FRONTEND_URL`, `JWT_SECRET`, `JWT_REFRESH_SECRET`, `PORT=5000`.
+
+4. **Deploy Frontend:**
    - Deploy from the same GitHub repo, setting the Root Directory to `/frontend`.
-   - Add environment variable: `VITE_API_URL` pointing to your Railway backend's public URL (e.g., `https://my-backend.up.railway.app/api`).
-   - Railway will automatically detect Vite and host it as a static site.
+   - Set Build Command: `npm install && npm run build`
+   - Add environment variable: `VITE_API_URL` pointing to your newly created Railway backend's public URL.
+   - Railway will automatically detect Vite and host it as a highly optimized static site.
 
 ---
 *Developed with focus on scalability, type safety, and premium user experience.*

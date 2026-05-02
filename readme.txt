@@ -2,7 +2,7 @@ TEAM TASK MANAGER - FULL-STACK ASSIGNMENT SUBMISSION
 ====================================================
 
 Repository URL: https://github.com/jatin-jatin42/Team-Task-Manager
-Live Deployment: [Add your Railway URL here once deployed]
+Live Deployment: https://team-task-manager-production-7f02.up.railway.app/
 
 1. OVERVIEW
 ----------------------------------------------------
@@ -106,10 +106,11 @@ This repository is configured as a monorepo for seamless deployment on Railway.
 2. Provision a PostgreSQL Database plugin in Railway.
 3. Deploy Backend: 
    - Deploy from your GitHub repo, setting the Root Directory to /backend.
-   - Set Build Command: npm run build
-   - Set Start Command: npx prisma migrate deploy && npm start
-   - Add environment variables: DATABASE_URL (from Postgres plugin), JWT_SECRET, JWT_REFRESH_SECRET, PORT=5000.
+   - Set Build Command: npm install && npm run build
+   - Set Start Command: npx prisma db push && npm start
+   - Add environment variables: MY_DB_URL (from Postgres plugin), FRONTEND_URL, JWT_SECRET, JWT_REFRESH_SECRET, PORT=5000.
 4. Deploy Frontend:
    - Deploy from the same GitHub repo, setting the Root Directory to /frontend.
+   - Set Build Command: npm install && npm run build
    - Add environment variable: VITE_API_URL pointing to your newly created Railway backend's public URL.
    - Railway will automatically detect Vite and host it as a highly optimized static site.
